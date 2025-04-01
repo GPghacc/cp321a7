@@ -26,7 +26,9 @@ fig = px.choropleth(df, locations="Country Code",
 
 def search_by_year(year):
     wonByYear = df[df['Years Won'].apply(lambda x: year in x)]
+    wonByYear = wonByYear.iloc[0]
     runnerUpByYear=df[df['Years runners-up'].apply(lambda x: year in x)]
+    runnerUpByYear = runnerUpByYear.iloc[0]
     
     return wonByYear, runnerUpByYear
 
